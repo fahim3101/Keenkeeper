@@ -10,7 +10,6 @@
 - **Tailwind CSS** (Styling)
 - **Vite** (Build Tool)
 - **React Router** (Navigation)
-- **Lucide React** (Icons)
 
 ---
 
