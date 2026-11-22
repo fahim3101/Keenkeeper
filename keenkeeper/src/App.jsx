@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { FriendsProvider } from './context/FriendsContext';
 import { TimelineProvider } from './context/TimelineContext';
 
 import Navbar from './components/Navbar';
@@ -12,24 +13,26 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <TimelineProvider>
-      <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <div className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/friend/:id" element={<FriendDetails />} />
-              <Route path="/timeline" element={<Timeline />} />
-              <Route path="/stats" element={<Stats />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+    <FriendsProvider>
+      <TimelineProvider>
+        <BrowserRouter>
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/friend/:id" element={<FriendDetails />} />
+                <Route path="/timeline" element={<Timeline />} />
+                <Route path="/stats" element={<Stats />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-        <Toaster position="bottom-right" />
-      </BrowserRouter>
-    </TimelineProvider>
+          <Toaster position="bottom-right" />
+        </BrowserRouter>
+      </TimelineProvider>
+    </FriendsProvider>
   );
 }
 

@@ -1,14 +1,134 @@
 [
-  { "id": 1, "name": "Adnan", "days_since_contact": 2, "tags": ["BUP", "CSE"], "status": "on-track", "picture": "/assets/1.png" },
-  { "id": 2, "name": "Sajid", "days_since_contact": 15, "tags": ["School", "Bestie"], "status": "overdue", "picture": "/assets/2.png" },
-  { "id": 3, "name": "Nabil", "days_since_contact": 5, "tags": ["Neighbor"], "status": "on-track", "picture": "/assets/3.png" },
-  { "id": 4, "name": "Rohan", "days_since_contact": 20, "tags": ["BUP"], "status": "overdue", "picture": "/assets/4.png" },
-  { "id": 5, "name": "Tanvir", "days_since_contact": 1, "tags": ["HSC"], "status": "on-track", "picture": "/assets/5.png" },
-  { "id": 6, "name": "Zayan", "days_since_contact": 10, "tags": ["Gaming"], "status": "upcoming", "picture": "/assets/6.png" },
-  { "id": 7, "name": "Abrar", "days_since_contact": 3, "tags": ["BUP"], "status": "on-track", "picture": "/assets/7.png" },
-  { "id": 8, "name": "Fahim", "days_since_contact": 30, "tags": ["School"], "status": "overdue", "picture": "/assets/8.png" },
-  { "id": 9, "name": "Ishraq", "days_since_contact": 0, "tags": ["CSE"], "status": "on-track", "picture": "/assets/9.png" },
-  { "id": 10, "name": "Muntasir", "days_since_contact": 7, "tags": ["HSC"], "status": "upcoming", "picture": "/assets/10.png" },
-  { "id": 11, "name": "Sakib", "days_since_contact": 12, "tags": ["Football"], "status": "upcoming", "picture": "/assets/11.png" },
-  { "id": 12, "name": "Rayhan", "days_since_contact": 4, "tags": ["BUP"], "status": "on-track", "picture": "/assets/12.png" }
+  {
+    "id": 1,
+    "name": "Adnan",
+    "days_since_contact": 2,
+    "tags": ["BUP", "CSE"],
+    "status": "on-track",
+    "picture": "/assets/1.png",
+    "goal": 14,
+    "email": "adnan@bup.edu.bd",
+    "bio": "Classmate from the CSE building. We trade lecture notes, late-night debugging stories and the occasional cha."
+  },
+  {
+    "id": 2,
+    "name": "Sajid",
+    "days_since_contact": 15,
+    "tags": ["School", "Bestie"],
+    "status": "overdue",
+    "picture": "/assets/2.png",
+    "goal": 14,
+    "email": "sajid.hasan@gmail.com",
+    "bio": "The friend who remembers every inside joke. We have been on the same cricket team since class eight."
+  },
+  {
+    "id": 3,
+    "name": "Nabil",
+    "days_since_contact": 5,
+    "tags": ["Neighbor"],
+    "status": "on-track",
+    "picture": "/assets/3.png",
+    "goal": 21,
+    "email": "nabil.ahmed@outlook.com",
+    "bio": "Lives two doors down. Our evening walks usually turn into long conversations about films and football."
+  },
+  {
+    "id": 4,
+    "name": "Rohan",
+    "days_since_contact": 20,
+    "tags": ["BUP"],
+    "status": "overdue",
+    "picture": "/assets/4.png",
+    "goal": 14,
+    "email": "rohan.bup@gmail.com",
+    "bio": "Study partner turned close friend. He is the reason I survived the data structures final."
+  },
+  {
+    "id": 5,
+    "name": "Tanvir",
+    "days_since_contact": 1,
+    "tags": ["HSC"],
+    "status": "on-track",
+    "picture": "/assets/5.png",
+    "goal": 7,
+    "email": "tanvir.hsc@gmail.com",
+    "bio": "HSC batchmate with an endless playlist. We catch up almost every week over new music."
+  },
+  {
+    "id": 6,
+    "name": "Zayan",
+    "days_since_contact": 10,
+    "tags": ["Gaming"],
+    "status": "upcoming",
+    "picture": "/assets/6.png",
+    "goal": 14,
+    "email": "zayan.plays@gmail.com",
+    "bio": "Online duo for late-night matches. We are still undefeated in our own heads."
+  },
+  {
+    "id": 7,
+    "name": "Abrar",
+    "days_since_contact": 3,
+    "tags": ["BUP"],
+    "status": "on-track",
+    "picture": "/assets/7.png",
+    "goal": 14,
+    "email": "abrar.bup@gmail.com",
+    "bio": "Group project MVP. Always has a spare charger, a spare pen and a spare plan."
+  },
+  {
+    "id": 8,
+    "name": "Fahim",
+    "days_since_contact": 30,
+    "tags": ["School"],
+    "status": "overdue",
+    "picture": "/assets/8.png",
+    "goal": 21,
+    "email": "fahim.school@gmail.com",
+    "bio": "School friend who moved away for university. A single call always feels like no time has passed."
+  },
+  {
+    "id": 9,
+    "name": "Ishraq",
+    "days_since_contact": 0,
+    "tags": ["CSE"],
+    "status": "on-track",
+    "picture": "/assets/9.png",
+    "goal": 14,
+    "email": "ishraq.cse@gmail.com",
+    "bio": "Desk neighbour in the lab. We share deadlines, memes and an unhealthy amount of coffee."
+  },
+  {
+    "id": 10,
+    "name": "Muntasir",
+    "days_since_contact": 7,
+    "tags": ["HSC"],
+    "status": "upcoming",
+    "picture": "/assets/10.png",
+    "goal": 10,
+    "email": "muntasir.hsc@gmail.com",
+    "bio": "The calm one in every group. Gives the kind of advice you only appreciate a year later."
+  },
+  {
+    "id": 11,
+    "name": "Sakib",
+    "days_since_contact": 12,
+    "tags": ["Football"],
+    "status": "upcoming",
+    "picture": "/assets/11.png",
+    "goal": 14,
+    "email": "sakib.football@gmail.com",
+    "bio": "Weekend football captain. If he calls, it is either a match or a highlight reel."
+  },
+  {
+    "id": 12,
+    "name": "Rayhan",
+    "days_since_contact": 4,
+    "tags": ["BUP"],
+    "status": "on-track",
+    "picture": "/assets/12.png",
+    "goal": 14,
+    "email": "rayhan.bup@gmail.com",
+    "bio": "Library buddy with a gift for finding the one quiet corner in a full campus."
+  }
 ]
