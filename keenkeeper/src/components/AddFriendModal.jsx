@@ -5,14 +5,12 @@ import { useFriends } from '../context/FriendsContext';
 
 const EMPTY_FORM = { name: '', email: '', tags: '', goal: '14', bio: '' };
 
-export default function AddFriendModal({ open, onClose }) {
+export default function AddFriendModal({ onClose }) {
   const { addFriend } = useFriends();
   const [form, setForm] = useState(EMPTY_FORM);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!open) return;
-
     const onKeyDown = (event) => {
       if (event.key === 'Escape') onClose();
     };
@@ -25,16 +23,7 @@ export default function AddFriendModal({ open, onClose }) {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', onKeyDown);
     };
-  }, [open, onClose]);
-
-  useEffect(() => {
-    if (open) {
-      setForm(EMPTY_FORM);
-      setError('');
-    }
-  }, [open]);
-
-  if (!open) return null;
+  }, [onClose]);
 
   const update = (key) => (event) => setForm((prev) => ({ ...prev, [key]: event.target.value }));
 

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -49,10 +49,9 @@ export default function FriendDetails() {
 
   const friend = friends.find((item) => String(item.id) === String(id));
 
-  const moments = useMemo(
-    () => timelineEntries.filter((entry) => entry.friendName === friend?.name).slice(0, 5),
-    [timelineEntries, friend?.name],
-  );
+  const moments = timelineEntries
+    .filter((entry) => entry.friendName === friend?.name)
+    .slice(0, 5);
 
   const handleCheckIn = (type) => {
     if (!friend || logging) return;

@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { computeStatus } from '../lib/utils';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const FriendsContext = createContext(null);
 
 const USER_KEY = 'kk.friends.v1';
@@ -124,4 +125,5 @@ export function FriendsProvider({ children }) {
   return <FriendsContext.Provider value={value}>{children}</FriendsContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useFriends = () => useContext(FriendsContext);

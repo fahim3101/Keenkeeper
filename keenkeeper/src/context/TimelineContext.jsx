@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { formatDate } from '../lib/utils';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const TimelineContext = createContext(null);
 
 const STORAGE_KEY = 'kk.timeline.v1';
@@ -80,4 +81,5 @@ export function TimelineProvider({ children }) {
   return <TimelineContext.Provider value={value}>{children}</TimelineContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTimeline = () => useContext(TimelineContext);

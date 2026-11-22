@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { Clock3, Home, Menu, PieChart, UserPlus, X } from 'lucide-react';
 import { cx } from '../lib/utils';
 
@@ -17,11 +17,6 @@ const linkClass = ({ isActive }) =>
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname, location.search]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-paper/80 backdrop-blur-xl">
@@ -65,6 +60,7 @@ export default function Navbar() {
                 key={to}
                 to={to}
                 end={to === '/'}
+                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cx(
                     'flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold transition',
@@ -78,7 +74,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <Link to="/?add=1" className="btn btn-primary mt-3 w-full">
+          <Link to="/?add=1" onClick={() => setOpen(false)} className="btn btn-primary mt-3 w-full">
             <UserPlus size={16} />
             Add a friend
           </Link>

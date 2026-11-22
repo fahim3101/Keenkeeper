@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
   ArrowRight,
@@ -38,11 +38,7 @@ export default function Home() {
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [sort, setSort] = useState('attention');
-  const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    setModalOpen(params.get('add') === '1');
-  }, [params]);
+  const modalOpen = params.get('add') === '1';
 
   const openModal = () =>
     setParams((prev) => {
@@ -51,15 +47,18 @@ export default function Home() {
       return next;
     });
 
-  const closeModal = () =>
-    setParams(
-      (prev) => {
-        const next = new URLSearchParams(prev);
-        next.delete('add');
-        return next;
-      },
-      { replace: true },
-    );
+  const closeModal = useCallback(
+    () =>
+      setParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          next.delete('add');
+          return next;
+        },
+        { replace: true },
+      ),
+    [setParams],
+  );
 
   const counts = useMemo(
     () => ({
@@ -408,7 +407,7 @@ export default function Home() {
         )}
       </section>
 
-      <AddFriendModal open={modalOpen} onClose={closeModal} />
+      {modalOpen && <AddFriendModal onClose={closeModal} />}
     </>
   );
 }
